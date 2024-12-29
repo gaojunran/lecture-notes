@@ -10,9 +10,9 @@
 
 $E = q / (4 pi epsilon_0 r^2)$
 
-$d E = (d q) / (4 pi epsilon_0 r^2) $
+$dif E = (dif q) / (4 pi epsilon_0 r^2) $
 
-求$d q$时，可以借助线密度$dif q = lambda dif l$，面密度$dif q = sigma dif S$，体密度$dif q = rho dif V$。
+求$dif q$时，可以借助线密度$dif q = lambda dif l$，面密度$dif q = sigma dif S$，体密度$dif q = rho dif V$。
 
 解决环状问题时，有公式：$d l = R dif theta$。
 
@@ -59,7 +59,7 @@ $V = integral^(infinity)_r arrow(E) dot dif arrow(l)$
 
 在很多题目中，都需要分段用高斯定理求电场强度，再求得分段的电势相加。
 
-$arrow(E) = - gradient U$
+$arrow(E) = - gradient U = - ((partial V) / (partial x) arrow(i) + (partial V) / (partial y) arrow(j) + (partial V) / (partial z) arrow(k)) $
 
 = 求电势的典型结论
 
@@ -193,8 +193,9 @@ $mu_r = B / B_0 cases(
 
 = 磁场能量
 
-磁能密度：$w_m = 1/2 B^2 / mu_0$。
+磁能密度：$w_m = 1/2 arrow(B) dot arrow(H) = 1/2 mu H ^2 = 1/2 B^2 / mu$。
 
+磁场能量：$W_m = integral_V w_m dif V$
 = 感生电动势
 
 $epsilon = - (dif Phi) / (dif t) = integral.cont arrow(E_k) dot dif arrow(l) = - integral.cont (partial arrow(B)) / (partial t) dot dif arrow(S)$
@@ -216,6 +217,8 @@ $integral.cont arrow(D) dif arrow(S) = sum q = integral_v rho dif v$
 $integral.cont arrow(B) dif arrow(S) = 0$
 
 3. 变化的电场产生磁场。（全电流安培环路定理）
+
+$integral.cont_L arrow(H) dif arrow(l) = I + I_d = integral_S arrow(j) dot dif arrow(S) + integral_S (partial arrow(D)) / (partial t) dot dif arrow(S)$
 
 4. 变化的磁场一定伴随着电场。
 
