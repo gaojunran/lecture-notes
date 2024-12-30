@@ -139,7 +139,9 @@ $B = integral dif B = mu_0 / 4 pi integral (I dif l sin theta) / (r^2)$
 
 -- 圆形载流导线轴线处：$B = (mu_0 I) / (2 R)$
 
--- 无限长的螺线管：$B = (mu_0 I)$
+-- 无限长的螺线管：$B = mu_0 n I$
+
+-- 无限长的载流平面：$B = 1/2 mu_0 i$（$i$为平面在其法矢量方向上单位长度上的电流）
 
 = 安培环路定理
 
@@ -204,7 +206,7 @@ $epsilon = - (dif Phi) / (dif t) = integral.cont arrow(E_k) dot dif arrow(l) = -
 
 = 动生电动势
 
-$epsilon = - (dif Phi) / (dif t) = integral_l (arrow(v) times arrow(B)) dif arrow(l)$
+$epsilon = - (dif Phi) / (dif t) = integral_l (arrow(v) times arrow(B)) dif arrow(l) = B L overline(v) "（棒上各处速率不同）"$
 
 = 麦克斯韦方程组
 
@@ -217,6 +219,10 @@ $integral.cont arrow(D) dif arrow(S) = sum q = integral_v rho dif v$
 $integral.cont arrow(B) dif arrow(S) = 0$
 
 3. 变化的电场产生磁场。（全电流安培环路定理）
+
+全电流 = 位移电流（由变化的电场产生） + 传导电流
+
+位移电流在磁效应上和传导电流等效；但在热效应上不产生焦耳热。
 
 $integral.cont_L arrow(H) dif arrow(l) = I + I_d = integral_S arrow(j) dot dif arrow(S) + integral_S (partial arrow(D)) / (partial t) dot dif arrow(S)$
 
