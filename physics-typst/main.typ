@@ -93,7 +93,7 @@ $W_M = q_0 V = integral^(infinity)_r arrow(F) dot dif arrow(r)$
 
 $C = q / U$，$E = sigma / epsilon_0 = U / d$，$F = 1/2 E dot q$
 
-电容器含介质时，$C = epsilon_r C_0$，$epsilon = epsilon_0"(真空介电常量)" dot epsilon_r"(相对介电常量)"$
+电容器含介质时，$C = epsilon_r C_0$，$epsilon = epsilon_0 dot epsilon_r$
 
 并联：$C = C_1 + C_2 + ...$；串联：$C = 1 / C_1 + 1 / C_2 + ...$
 
@@ -107,15 +107,6 @@ $C = q / U$，$E = sigma / epsilon_0 = U / d$，$F = 1/2 E dot q$
 
 -- 孤立导体电容器：$C = 4 pi epsilon R_a$
 
-= 电容器充电与放电的结论
-
--- 电容器充电：$U$不变。
-
-$C = epsilon_r C_0$；$sigma = epsilon_r sigma_0$；$U = U_0$；$E = E_0$
-
--- 电容器放电：$Q$不变。
-
-$C = epsilon_r C_0$；$sigma = sigma_0$；$U = U_0 / epsilon_r$；$E = E_0 / epsilon_r$
 
 = 电介质高斯定理
 
@@ -128,6 +119,10 @@ $integral.cont arrow(D) dot dif arrow(S) = sum q_内$，其中$D = epsilon_0 eps
 电场能：$W_e = integral_V w_e dif V = Q^2 / (2 C) = 1/2 C(V_1 - V_2) ^ 2 = 1/2 Q (V_1 - V_2)$
 
 这里的电场能为静电能，指的是一个带电体或一个带电系统的总能量。
+
+= 束缚电荷面密度
+
+
 
 = 毕奥-萨瓦尔定律
 
@@ -147,7 +142,7 @@ $B = integral dif B = mu_0 / 4 pi integral (I dif l sin theta) / (r^2)$
 
 $integral.cont arrow(B) dot dif arrow(l) = mu_0 sum I_内$
 
-推论：$B = (mu_0 sum I_内) / (2 pi r)$
+// 推论：$B = (mu_0 sum I_内) / (2 pi r)$
 
 安培环路定理只与环路内部的电流有关，与环路外部的电流无关。还表明了磁场是一个有旋场（非保守场）。
 
@@ -237,3 +232,11 @@ $integral.cont arrow(E) dif arrow(l) = - (dif Phi) / (dif t) = - integral.cont (
 自感系数$L$的大小与回路的几何形状、大小、匝数、磁介质有关，与电流无关。
 
 互感：$M = Phi_2 / I_1 = Phi_1 / I_2$
+
+= 相对论中的长度收缩效应
+
+$l = l_0 sqrt(1 - (v^2) / c^2)$
+
+= 相对论中的时间延缓效应
+
+$Delta t = (Delta t_0) / sqrt(1 - (v^2) / c^2)$
