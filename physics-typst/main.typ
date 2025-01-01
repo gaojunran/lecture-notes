@@ -1,4 +1,5 @@
 #set page(columns: 2, margin: 1cm)
+#set text(size: 10pt)
 #let numcode(.., last) = if last < 10 {
   return "0" + str(last)
 } else {
@@ -57,8 +58,6 @@ $V = integral^(infinity)_r arrow(E) dot dif arrow(l)$
 
 该公式的积分下限为起点，积分上限为电势为0的点。通常定义无穷远处电势为0。
 
-在很多题目中，都需要分段用高斯定理求电场强度，再求得分段的电势相加。
-
 $arrow(E) = - gradient U = - ((partial V) / (partial x) arrow(i) + (partial V) / (partial y) arrow(j) + (partial V) / (partial z) arrow(k)) $
 
 = 求电势的典型结论
@@ -81,13 +80,11 @@ $W_M = q_0 V = integral^(infinity)_r arrow(F) dot dif arrow(r)$
 
 = 导体的静电平衡
 
-导体电荷分布在外表面，内部场强处处为0。
+导体电荷分布在外表面，内部场强处处为0。导体是等势体，表面是等势面，但场强并非处处相等。导体表面曲率越大，电荷密度越大。
 
-导体表面电场强度为$E = sigma / epsilon_0$。
+导体表面电场强度: $E = sigma / epsilon_0$。
 
-导体是等势体，表面是等势面，但场强并非处处相等。
 
-导体表面曲率越大，电荷密度越大。
 
 = 电容器
 
@@ -120,13 +117,13 @@ $integral.cont arrow(D) dot dif arrow(S) = sum q_内$，其中$D = epsilon_0 eps
 
 这里的电场能为静电能，指的是一个带电体或一个带电系统的总能量。
 
-= 束缚电荷面密度
-
-
+// = 电场与物质的相互作用
 
 = 毕奥-萨瓦尔定律
 
-$B = integral dif B = mu_0 / 4 pi integral (I dif l sin theta) / (r^2)$
+描述了电流在其周围所产生的磁场大小。
+
+$B = integral dif B = mu_0 / 4 pi integral (I dif l sin theta) / (r^2)$ ($theta$)
 
 = 求磁感应强度的典型结论
 
@@ -134,11 +131,11 @@ $B = integral dif B = mu_0 / 4 pi integral (I dif l sin theta) / (r^2)$
 
 -- 圆形载流导线轴线处：$B = (mu_0 I) / (2 R)$
 
--- 无限长的螺线管：$B = mu_0 n I$
+-- 螺绕环内部/无限长密绕直螺线管内部：$B = mu_0 n I$
 
 -- 无限长的载流平面：$B = 1/2 mu_0 i$（$i$为平面在其法矢量方向上单位长度上的电流）
 
-= 安培环路定理
+= 磁场中的安培环路定理
 
 $integral.cont arrow(B) dot dif arrow(l) = mu_0 sum I_内$
 
@@ -176,7 +173,7 @@ $dif arrow(F) = I dif arrow(l) times arrow(B)$
 
 = 洛伦兹力
 
-$F = B q V = (m v^2) / R$；$T = (2 pi m) / (B q)$
+$arrow(F) = q arrow(v) times arrow(B) = q v B sin theta = (m v^2) / R$；$T = (2 pi m) / (B q)$
 
 = 磁介质中的安培环路定理
 
@@ -193,6 +190,12 @@ $mu_r = B / B_0 cases(
 磁能密度：$w_m = 1/2 arrow(B) dot arrow(H) = 1/2 mu H ^2 = 1/2 B^2 / mu$。
 
 磁场能量：$W_m = integral_V w_m dif V$
+
+= 磁化、电极化
+
+#image("电极化磁化.png", width: 50%)
+
+
 = 感生电动势
 
 $epsilon = - (dif Phi) / (dif t) = integral.cont arrow(E_k) dot dif arrow(l) = - integral.cont (partial arrow(B)) / (partial t) dot dif arrow(S)$
@@ -233,10 +236,12 @@ $integral.cont arrow(E) dif arrow(l) = - (dif Phi) / (dif t) = - integral.cont (
 
 互感：$M = Phi_2 / I_1 = Phi_1 / I_2$
 
-= 相对论中的长度收缩效应
+= 爱因斯坦相对论中的两个基本假设
 
-$l = l_0 sqrt(1 - (v^2) / c^2)$
+狭义相对论的相对性原理、光速不变原理。
 
-= 相对论中的时间延缓效应
+= 相对论
 
-$Delta t = (Delta t_0) / sqrt(1 - (v^2) / c^2)$
+长度收缩效应：$l = l_0 sqrt(1 - (v^2) / c^2)$
+
+时间延缓效应：$Delta t = (Delta t_0) / sqrt(1 - (v^2) / c^2)$
