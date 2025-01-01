@@ -1,4 +1,4 @@
-// #set text(size: 12pt)
+#set text(size: 10.5pt)
 #set page(columns: 2, margin: 1cm)
 #let numcode(.., last) = if last < 10 {
   return "0" + str(last)
@@ -112,19 +112,48 @@ $X_1, X_2,..., X_n$是$F$的一个样本，则它们的联合分布函数为$F^*
 $cases(
   A_1 = 1/n sum^n_(i=1) X_i,
   mu_1 = E(X)
-) => A_1 = mu_1 => "解出一个未知参数"$
+) => mu_1 = A_1 => "解出一个未知参数"$
 
 - 总体中有两个待估参数，用样本的前二阶矩来估计总体的前二阶矩：
-#set text(size: 10pt)
+#text(size: 10pt)[
 $cases(
   A_1 = 1/n sum^n_(i=1) X_i,
   A_2 = 1/n sum^n_(i=1) X_i^2,
   mu_1 = E(X),
   mu_2 = E(X^2) = D(X) + (E(X))^2,
 ) => cases(
-  A_1 = mu_1,
-  A_2 = mu_2
+  mu_1 = A_1,
+  mu_2 = A_2,
 ) => "解出两个未知参数"$
+]
+
+= 点估计的最大似然估计法
+
+1. 写出似然函数：
+
+$L(theta) = L(x_1, x_2,..., x_n; theta) \ = product^n_(i=1) p(x_i; theta)"（离散型）" \ = product^n_(i=1) f(x_i; theta)"（连续型）"$
+
+2. 选取使得似然函数$L(theta)$取得最大值的$hat(theta)$作为$theta$的估计值。
+
+可以列出对数似然方程（组）$(dif ln L(theta)) / (dif theta) = 0$，解方程得到最大似然估计值。
+
+= 估计量的评价标准
+
+- 无偏性：$E(hat(theta)) = theta$。
+
+- 有效性：$D(hat(theta_1)) <= D(hat(theta_2))$，则称$hat(theta_1)$比$hat(theta_2)$更有效。
+
+- 相合性（一致性）：当$n -> oo$时，$hat(theta)$依概率收敛于$theta$。
+
+= 区间估计
+
+1. 构造一个关于样本的含$theta$的函数$W$，分布中不含有未知参数。
+
+2. 取$W$的分布对应的上$1 - alpha / 2$分位点、上$alpha / 2$分位点，则满足$P{x_(1 - alpha / 2) < W(x) < x_(alpha / 2)} = 1 - alpha$。
+
+3. 不等式中仅有唯一参数$theta$，解其取值范围得到置信区间。
+
+#image("区间估计.png")
 
 
 = 假设检验
@@ -137,6 +166,7 @@ $cases(
 
 4. 根据样本的观察值，计算统计量的观察值$u_0$，若$t_0$落入拒绝域，则拒绝假设$H_0$。
 
-#image("假设检验.png")
+#image("假设检验单侧.png")
 
+#image("假设检验双侧.png")
 
