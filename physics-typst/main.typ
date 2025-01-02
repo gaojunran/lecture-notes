@@ -165,7 +165,7 @@ $dif arrow(F) = I dif arrow(l) times arrow(B)$
 
 = 磁矩、磁力矩
 
-磁矩：$p_m = I dot S$
+磁矩：$P_m = I dot S$
 
 磁力矩：$M = B P_m sin theta$
 
