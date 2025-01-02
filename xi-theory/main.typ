@@ -1,6 +1,6 @@
-// #set text(font: "FangSong_GB2312")
+// #set text(font: "FangSong_GB2312")  // For printing
 
-#set text(font: "MiSans VF")
+#set text(font: "MiSans VF") // For online reading
 
 #show "·": none  // Compromise as Rust crate regex does not support look around
 
@@ -8,7 +8,7 @@
 // #show regex("·.+?·"): set text(red)  
 
 // If you want to recite:
-#show regex("·.+?·"): it => [#set text(white);#underline(offset: 2pt, stroke: black)[#it]]
+#show regex("·.+?·"): it => [#set text(white);#underline(offset: 1pt, stroke: black)[#it]]
 
 // Auto Completion for VS Code
 // 习近平新时代中国特色社会主义
