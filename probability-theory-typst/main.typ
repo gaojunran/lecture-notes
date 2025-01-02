@@ -1,4 +1,4 @@
-#set text(size: 10.5pt)
+#set text(size: 8.5pt)
 #set page(columns: 2, margin: 1cm)
 #let numcode(.., last) = if last < 10 {
   return "0" + str(last)
@@ -6,6 +6,103 @@
   return str(last)
 }
 #set heading(numbering: numcode)
+
+= 泊松分布
+
+$P{X = k} = (lambda^k e^(-lambda)) / k! => X ~ pi(lambda)$
+
+对于一个二项分布$X ~ B(n,p)$，当$n$很大、$p$很小时，可以近似为泊松分布，即$n p -> lambda(n -> +oo)$.
+
+= 分布函数的性质
+
+1. $0 < F(x) <= 1$
+
+2. $"if" x_1 < x_2, F(x_1) <= F(x_2)$（单调不减性）
+
+3. $F(-oo) = limits(lim)_(x -> -oo) F(x) = 0, F(+oo) = limits(lim)_(x -> +oo) F(x) = 1$（归一性）
+
+4. $limits(lim)_(x -> x_0^+) F(x) = F(x_0)$ （右连续性）
+
+= 概率密度函数的性质
+
+1. $f(x) >= 0$
+
+2. $integral^(+oo)_(-oo) f(x) dif x = 1$
+
+3. $P{x_1 < X <= x_2} = F(x_2) - F(x_1) = integral^(x_2)_(x_1) f(x) dif x $
+
+4. 若$f(x)$在点$x$处连续，则有$F'(x) = f(x)$.
+
+= 指数分布
+
+$f(x) = cases(
+  1/theta e^(-x/theta) &", when" x > 0,
+  0 &", when" x <= 0
+) => X ~ E(theta)$
+
+= 正态分布
+
+$f(x) = 1/ (sqrt(2 pi) sigma) e^(-((x - mu)^2) / (2sigma^2)) => X ~ N(mu, sigma^2)$
+
+标准正态分布函数的性质：$Phi(-x) = 1 - Phi(x)$
+
+利用查表法求概率：$P{c <= X <= d} = Phi((d - mu) / sigma) - Phi((c - mu) / sigma)$
+
+= 求随机变量函数$Y = g(x)$的概率密度
+- 分布函数法（通用）
+
+  1. 先求$Y$的分布函数$F_Y (y) = P{Y <= y} = P{g(X) <= y}$（反解出$P{X <= h(y)} = integral_(-oo)^(h(y)) f_X (x) dif x$的形式）
+
+  2. 再求$Y$的概率密度函数$f_Y (y) = F'_Y (y)$
+
+- 定理法
+
+  若$g(x)$处处可导且单调，则有$f_Y (y) = f_X (h(y)) |h'(y)|$, when $alpha < y < beta$，其中$alpha = min(g(-oo), g(+oo))$, $beta = max(g(-oo), g(+oo))$，$h(y)$是$g(x)$的反函数。
+
+= 二维随机变量分布函数的性质
+
+$P(x_1 < X < x_2, y_1 < Y <= y_2) = F(x_2, y_2) - F(x_2, y_1) + F(x_1, y_1) - F(x_1, y_2) >= 0$
+
+= 二维正态分布
+
+$(X, Y) ~ N(mu_1, mu_2, sigma_1, sigma_2, rho)$
+
+= 边缘分布函数
+
+$F_X (x) = F(x, +oo), f_X (x) = integral^(+oo)_(-oo) f(x, y) dif y$
+
+$F_Y (y) = F(+oo, y), f_Y (y) = integral^(+oo)_(-oo) f(x, y) dif x$
+
+= 独立性
+
+$X$和$Y$相互独立 $<=>$
+
+$P{X = x_i, Y = y_j} = P{X = x_i}P{Y = y_j}$ (离散型)
+
+$f(x,y) = f_X(x) f_Y (y)$ （连续型）
+
+
+= 条件分布
+
+$P{X = x_i | Y = y_j} = (P{X = x_i, Y = y_j}) / P{Y = y_j}$.
+
+$F_(X|Y) (x|y) = integral^x_(-oo) f_(X|Y) (x|y) dif x = integral^x_(-oo) [(f(x,y)) / (f_Y (y))] dif x $.
+
+= 连续型随机变量函数的分布
+
+- $Z = X + Y$的分布
+
+  $f_Z (z) = integral_(-oo)^(+oo) f(z - y, y) dif y = integral_(-oo)^(+oo) f(x, z - x) dif x$
+
+- $Z = X / Y$的分布
+
+  $f_Z (z) = integral_(-oo)^(+oo) |y| f(y z, y) dif y = integral_(-oo)^(+oo) |x| f(x, x z) dif x$
+
+- $M = max(X, Y)$和$N = min(X, Y)$的分布
+
+  $F_max (z) = F_X (z) F_Y (z)$
+
+  $F_min (z) = 1 - [1 - F_X (z)] [1 - F_Y (z)]$
 
 = 连续型数学期望
 
@@ -17,7 +114,7 @@ $E(Z) = E(h(X,Y)) = integral_(-oo)^(+oo) integral_(-oo)^(+oo) h(x,y) f(x,y) dif 
 
 = 方差的定义
 
-$D(X) = "Var"(X) = E((X - E(X))^2) = E(X^2) - (E(X))^2$。
+$D(X) = E((X - E(X))^2) = E(X^2) - (E(X))^2$。
 
 根据定义，方差实际上是随机变量X的函数$g(X) = (X - E(X))^2$的数学期望。
 
@@ -109,14 +206,14 @@ $X_1, X_2,..., X_n$是$F$的一个样本，则它们的联合分布函数为$F^*
 
 - 总体中只有一个待估参数，用样本的一阶矩来估计总体的一阶矩：
 
-$cases(
+  $cases(
   A_1 = 1/n sum^n_(i=1) X_i,
   mu_1 = E(X)
 ) => mu_1 = A_1 => "解出一个未知参数"$
 
 - 总体中有两个待估参数，用样本的前二阶矩来估计总体的前二阶矩：
-#text(size: 10pt)[
-$cases(
+
+  $cases(
   A_1 = 1/n sum^n_(i=1) X_i,
   A_2 = 1/n sum^n_(i=1) X_i^2,
   mu_1 = E(X),
@@ -125,7 +222,6 @@ $cases(
   mu_1 = A_1,
   mu_2 = A_2,
 ) => "解出两个未知参数"$
-]
 
 = 点估计的最大似然估计法
 

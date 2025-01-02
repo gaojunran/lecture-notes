@@ -12,6 +12,7 @@
 
 - [概率论与数理统计](./probability-theory-typst/main.typ)
 - [大学物理 - 电磁学与相对论](physics-typst/main.typ)
+- [习概](./xi-theory/main.typ)s
 
 ## 如何修改笔记和生成PDF
 
