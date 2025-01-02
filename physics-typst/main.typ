@@ -123,7 +123,7 @@ $integral.cont arrow(D) dot dif arrow(S) = sum q_内$，其中$D = epsilon_0 eps
 
 描述了电流在其周围所产生的磁场大小。
 
-$B = integral dif B = mu_0 / 4 pi integral (I dif l sin theta) / (r^2)$ ($theta$)
+$B = integral dif B = mu_0 / 4 pi integral (I dif l sin theta) / (r^2)$
 
 = 求磁感应强度的典型结论
 
@@ -206,6 +206,19 @@ $epsilon = - (dif Phi) / (dif t) = integral.cont arrow(E_k) dot dif arrow(l) = -
 
 $epsilon = - (dif Phi) / (dif t) = integral_l (arrow(v) times arrow(B)) dif arrow(l) = B L overline(v) "（棒上各处速率不同）"$
 
+
+= 自感与互感
+
+自感：$L = Phi / I$；$epsilon = L dot (dif I) / (dif t)$
+
+自感回路周围空间磁场的能量：$W_m = 1/2 L I_0^2$
+
+自感系数$L$的大小与回路的几何形状、大小、匝数、磁介质有关，与电流无关。
+
+互感：$M = Phi_2 / I_1 = Phi_1 / I_2$；$M = sqrt(L_1 L_2)$（耦合线圈）
+
+$epsilon_21 = M (dif I_1) / (dif t), epsilon_12 = M (dif I_2) / (dif t)$
+
 = 麦克斯韦方程组
 
 1. 电场高斯定理：电场是有源场，电荷总伴随着电场。
@@ -218,23 +231,17 @@ $integral.cont arrow(B) dif arrow(S) = 0$
 
 3. 变化的电场产生磁场。（全电流安培环路定理）
 
-全电流 = 位移电流（由变化的电场产生） + 传导电流
+位移电流：电位移通量对时间的变化率看作是一种电流，由变化的电场产生。
 
 位移电流在磁效应上和传导电流等效；但在热效应上不产生焦耳热。
+
+全电流 = 位移电流 + 传导电流
 
 $integral.cont_L arrow(H) dif arrow(l) = I + I_d = integral_S arrow(j) dot dif arrow(S) + integral_S (partial arrow(D)) / (partial t) dot dif arrow(S)$
 
 4. 变化的磁场一定伴随着电场。
 
 $integral.cont arrow(E) dif arrow(l) = - (dif Phi) / (dif t) = - integral.cont (partial arrow(B)) / (partial t) dot dif arrow(S)$
-
-= 自感与互感
-
-自感：$L = Phi / I$；$epsilon = L (dif I / dif t)$
-
-自感系数$L$的大小与回路的几何形状、大小、匝数、磁介质有关，与电流无关。
-
-互感：$M = Phi_2 / I_1 = Phi_1 / I_2$
 
 = 爱因斯坦相对论中的两个基本假设
 
