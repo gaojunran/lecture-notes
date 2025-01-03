@@ -1,14 +1,6 @@
-// #set text(font: "FangSong_GB2312")  // For printing
+#import "../templates/recite.typ": *
 
-#set text(font: "MiSans VF") // For online reading
-
-#show "·": none  // Compromise as Rust crate regex does not support look around
-
-// For emphasizing: 
-// #show regex("·.+?·"): set text(red)  
-
-// If you want to recite:
-#show regex("·.+?·"): it => [#set text(white);#underline(offset: 1pt, stroke: black)[#it]]
+#show: doc => conf(doc, answer: true, print: false)
 
 // Auto Completion for VS Code
 // 习近平新时代中国特色社会主义
