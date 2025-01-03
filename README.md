@@ -17,7 +17,7 @@
 
 ## 如何修改笔记和生成PDF
 
-```bash
+```shell
 scoop install main/typst  # For Windows, need to install scoop first
 brew install typst # For MacOS, need to install homebrew first
 
@@ -25,7 +25,3 @@ code main.typ  # and make your changes
 
 typst compile main.typ ./main.pdf  # generate PDF file
 ```
-
-## TODO
-
-- 补充笔记内容
