@@ -123,7 +123,7 @@ $integral.cont arrow(D) dot dif arrow(S) = sum q_内$，其中$D = epsilon_0 eps
 
 描述了电流在其周围所产生的磁场大小。
 
-$B = integral dif B = mu_0 / 4 pi integral (I dif l sin theta) / (r^2)$
+$B = integral dif B = mu_0 /( 4 pi) integral (I dif l sin theta) / (r^2)$
 
 = 求磁感应强度的典型结论
 
