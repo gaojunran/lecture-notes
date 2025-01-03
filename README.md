@@ -12,7 +12,8 @@
 
 - [概率论与数理统计](./probability-theory-typst/main.typ)
 - [大学物理 - 电磁学与相对论](physics-typst/main.typ)
-- [习概](./xi-theory/main.typ)s
+- [习概](./xi-theory/main.typ)
+- [毛概](./mao-theory-typst/main.typ)
 
 ## 如何修改笔记和生成PDF
 
@@ -22,11 +23,9 @@ brew install typst # For MacOS, need to install homebrew first
 
 code main.typ  # and make your changes
 
-typst main.typ ./main.pdf  # generate PDF file
+typst compile main.typ ./main.pdf  # generate PDF file
 ```
 
 ## TODO
 
 - 补充笔记内容
-
-- 编写自动commit, push和生成PDF的脚本
