@@ -1,6 +1,6 @@
 #import "../templates/recite.typ": *
 
-#show: doc => conf(doc, answer: true, print: false)
+#show: doc => conf(doc, answer: true, print: true)
 
 // Auto Completion for VS Code
 // 习近平新时代中国特色社会主义
