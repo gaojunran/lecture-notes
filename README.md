@@ -17,11 +17,15 @@
 
 ## 如何修改笔记和生成PDF
 
+1. [安装Typst](https://github.com/typst/typst?tab=readme-ov-file#installation).
+
+2. 使用VS Code（搭配Tinymist Typst插件）修改和预览`.typ`文件。
+
+3. 使用Tinymist Typst插件的功能导出PDF，或运行以下命令：
 ```shell
-scoop install main/typst  # For Windows, need to install scoop first
-brew install typst # For MacOS, need to install homebrew first
-
-code main.typ  # and make your changes
-
-typst compile main.typ ./main.pdf  # generate PDF file
+typst compile main.typ ./main.pdf --root .
 ```
+
+## 如何配置字体？
+
+本项目中使用`MiSans`字体和`仿宋`字体。你可以选择在你的电脑上安装，或修改源码中的字体设置。
