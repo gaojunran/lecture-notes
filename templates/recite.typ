@@ -1,9 +1,9 @@
-#let conf(doc, answer: true, print: true) = {
+#let conf(doc, answer: true, print: true, printFont: "STFangsong", screenFont: "MiSans VF") = {
   show "·": none  // Compromise as Rust crate regex does not support look around
   set page(numbering: "1")
   set text(lang: "zh")
-  set text(font: "FangSong_GB2312") if print
-  set text(font: "MiSans VF") if not print
+  set text(font: printFont) if print
+  set text(font: screenFont) if not print
   set par(spacing: 5mm, leading: 4mm)
   show heading.where(level: 1): set block(spacing: 1em)
   show regex("·.+?·"): it => {
